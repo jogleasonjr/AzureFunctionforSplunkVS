@@ -74,6 +74,7 @@ namespace AzureFunctionForSplunk
             ((IDictionary<String, Object>)o).Add("sourcetype", SplunkSourceType);
             ((IDictionary<String, Object>)o).Add("time", unixTime().ToString("0.000"));
             ((IDictionary<String, Object>)o).Add("event", Message);
+            ((IDictionary<String, Object>)o).Add("index", "azure");
             string json = Newtonsoft.Json.JsonConvert.SerializeObject(o);
 
             return json;
